@@ -31,12 +31,21 @@ $(document).on('mouseleave', '.headerList', function(){
    })
 })
 
+let unorderedList = document.createElement('ul')
+unorderedList.id = 'createdList';
+containerDiv.append(unorderedList);
+
 $('#btnSubmit').click(function() {
    let inputItem = document.createTextNode(( $("input[id=textSubmit]").val())); 
-   let newHeader = document.createElement('h2');
-   newHeader.className = 'headerList';
-   newHeader.append(inputItem);
-   containerDiv.append(newHeader);
+   //let newHeader = document.createElement('h2');
+   //newHeader.className = 'headerList';
+   //newHeader.append(inputItem);
+   //containerDiv.append(newHeader);
+   $("#createdList").append( 
+      $('<li>').append(
+         inputItem
+      )
+   );
    return false;
 });
 
