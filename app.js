@@ -49,5 +49,23 @@ $('#btnSubmit').click(function() {
    return false;
 });
 
+const randomColor = () => {
+   let color = '#';
+   for (let i = 0; i < 6; i++) {
+      let random = Math.random();
+      let bit = (random * 16) | 0;
+      color += (bit).toString(16);
+   };
+   return color;
+}
+
+$('#createdList').on('click', 'li', function() {
+   $(this).css({'color': randomColor()
+})
+})
+
+$('#createdList').on('dblclick', 'li', function() {
+   (this).remove();
+})
 
 });
