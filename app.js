@@ -2,15 +2,21 @@ $(document).ready(function(){
 
 let submitBtn = $("#btnSubmit");
 
-$('#btnSubmit').prop('disabled', true);
 
-if ( $("#btnSubmit").val() !== '') {
-   $('#btnSubmit').prop('disabled', false);
-};
 
 $('#btnSubmit').click(function() {
    alert($("input[id=textSubmit]").val());
 });
+
+
+$(document).keydown(function (){
+   if ( $("input[id=textSubmit]").val() == '') {
+      $('#btnSubmit').prop('disabled', true);
+   } else if ( $("input[id=textSubmit]").val() !== '') {
+      $('#btnSubmit').prop('disabled', false);
+   }
+})
+
 
 let containerDiv = document.createElement('div');
 document.body.append(containerDiv);
